@@ -17,6 +17,12 @@ export class TeamsService {
     const urlApi = 'https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=' + id;
     return this.http.get(urlApi);
   }
+  getPlayerById(id) {
+    const urlApi = 'https://www.thesportsdb.com/api/v1/json/1/lookup_all_players.php?id=' + id;
+    return this.http.get(urlApi);
+  }
+
+  /* jugadores por ID de equipo:https://www.thesportsdb.com/api/v1/json/1/lookup_all_players.php?id=133604 */
 
 
 }

@@ -8,11 +8,13 @@ import { ActivatedRoute} from '@angular/router';
   styleUrls: ['./team-profile.component.css']
 })
 export class TeamProfileComponent implements OnInit {
+  player: any[] = [];
   teams: any[] = [];
 
   constructor(
     private teamService: TeamsService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute
+    ) { }
   ngOnInit() {
     this.route.params.subscribe(
       (params) => {
@@ -21,6 +23,16 @@ export class TeamProfileComponent implements OnInit {
           (data) => {
             // tslint:disable-next-line: no-string-literal
             this.teams = data['teams'];
+          },
+          (error) => {
+            console.error(error);
+          }
+        );
+        this.teamService.getPlayerById(params.id)
+        .subscribe(
+          (data) => {
+            // tslint:disable-next-line: no-string-literal
+            this.player = data['player'];
           },
           (error) => {
             console.error(error);
