@@ -28,7 +28,7 @@ export class TeamProfileComponent implements OnInit {
             console.error(error);
           }
         );
-        this.teamService.getPlayerById(params.id)
+        this.teamService.getPlayerByTeamId(params.id)
         .subscribe(
           (data) => {
             // tslint:disable-next-line: no-string-literal

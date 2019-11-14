@@ -1,3 +1,47 @@
-<p>
-  player works!
-</p>
+<div *ngFor='let p of players'>
+  <ul>
+    <li>{{p.idPlayer}}</li>
+    <li>{{p.strPlayer}}</li>
+    <li>{{p.strPosition}}</li>
+    <li>{{p.strNumber}}</li>
+    <li>
+        <img [src]="p.strThumb" class="card-img-top mt-3 img-fluid" alt="Foto del Jugador">
+    </li>
+  </ul>
+
+</div>
+
+<a [routerLink]="['']">Home</a>
+
+<!--
+  TODO:
+  perfil de cada jugador donde podrá ver sus datos personales,
+  número dorsal, posición en la quejuega, foto.
+
+  TODO:
+  Eventos:
+    - últimos 5 partidosconsu resultado
+    - próximos 5 partidos.
+
+    - Listado Con todos los partidos de la temporada actual del equipo
+    - De los ya jugados se podra ver:
+        alineaciones
+        resultados
+        tarjetas amarrilas
+        cambios
+  TODO:
+    - Tabla de Posiciones con el nombre del equipo en negrillas
+
+
+    APIS:
+    Detalles por ID de Evento : https://www.thesportsdb.com/api/v1/json/1/lookupevent.php?id=441613
+    Tabla de Posiciones : https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=4328&s=1920
+    Eventos de la Temporada : https://www.thesportsdb.com/api/v1/json/1/eventsseason.php?id=4328&s=1920
+    Próximos 5 eventos por ID de equipo : https://www.thesportsdb.com/api/v1/json/1/eventsnext.php?id=133613
+    Últimos 5 eventos por ID de equipo : https://www.thesportsdb.com/api/v1/json/1/eventslast.php?id=133602
+    Jugadores por ID de equipo : https://www.thesportsdb.com/api/v1/json/1/lookup_all_players.php?id=133604
+    Lista todos los equipos de una liga : https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=English%20Premier%20League
+-->
+
+
+
