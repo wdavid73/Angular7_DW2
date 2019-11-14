@@ -34,7 +34,7 @@
     <div *ngFor='let p of player'>
       <div class="col mt-2 mb-2">
           <img
-          [src]="p.strCutout"
+          [src]="p.strCutout || p.strThumb"
           class="card-img-top mt-3 img-fluid"
           alt="Foto del Jugador"
           style="border-radius: 50%; width: 11.5rem;">

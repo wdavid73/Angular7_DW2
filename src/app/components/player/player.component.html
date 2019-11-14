@@ -1,20 +1,31 @@
+<div class="jumbotron jumbotron-fluid">
 <div *ngFor='let p of players'>
-  <ul>
-    <li>{{p.idPlayer}}</li>
-    <li>{{p.strPlayer}}</li>
-    <li>{{p.strPosition}}</li>
-    <li>{{p.strNumber}}</li>
-    <li>
-        <img [src]="p.strThumb" class="card-img-top mt-3 img-fluid" alt="Foto del Jugador">
-    </li>
-  </ul>
-
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="display-4">{{p.strPlayer}}</h1>
+          <p class="lead">Position : {{p.strPosition}}</p>
+          <p class="lead">Dorsal : {{p.strNumber}}</p>
+          <p class="lead"> Team :
+            <a [routerLink]="['/team', p.idTeam ,'details']">
+            {{p.strTeam}}
+            </a>
+           </p>
+          <p class="lead">Nationality : {{p.strNationality}}</p>
+          <a [routerLink]="['/team', p.idTeam ,'details']" class="btn btn-info">Back</a>
+        </div>
+        <div class="col">
+          <img [src]="p.strThumb" class="card-img-top mt-3 img-fluid" alt="Foto del Jugador">
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<a [routerLink]="['']">Home</a>
+
 
 <!--
-  TODO:
+  TODO: TERMINADO
   perfil de cada jugador donde podrá ver sus datos personales,
   número dorsal, posición en la quejuega, foto.
 
