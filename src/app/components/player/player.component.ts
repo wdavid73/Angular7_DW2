@@ -17,6 +17,7 @@ export class PlayerComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(
       (params) => {
+        /* Obtener Jugador Por ID */
         this.teamService.getPlayerById(params.id).subscribe(
           (data) => {
             // tslint:disable-next-line: no-string-literal

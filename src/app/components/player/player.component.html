@@ -5,7 +5,7 @@
         <div class="col">
           <h1 class="display-4">{{p.strPlayer}}</h1>
           <p class="lead">Position : {{p.strPosition}}</p>
-          <p class="lead">Dorsal : {{p.strNumber}}</p>
+          <p class="lead">Dorsal : {{p.strNumber  || "Sin Dorsal" }}</p>
           <p class="lead"> Team :
             <a [routerLink]="['/team', p.idTeam ,'details']">
             {{p.strTeam}}

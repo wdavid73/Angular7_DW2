@@ -10,6 +10,8 @@ import { ActivatedRoute} from '@angular/router';
 export class TeamProfileComponent implements OnInit {
   player: any[] = [];
   teams: any[] = [];
+  events: any[] = [];
+  results: any[] = [];
 
   constructor(
     private teamService: TeamsService,
@@ -18,6 +20,7 @@ export class TeamProfileComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(
       (params) => {
+        /* Obtener Equipo Por ID */
         this.teamService.getTeamById(params.id)
         .subscribe(
           (data) => {
@@ -28,6 +31,7 @@ export class TeamProfileComponent implements OnInit {
             console.error(error);
           }
         );
+        /* Obtener Jugador de Equipo Por ID */
         this.teamService.getPlayerByTeamId(params.id)
         .subscribe(
           (data) => {
@@ -36,6 +40,26 @@ export class TeamProfileComponent implements OnInit {
           },
           (error) => {
             console.error(error);
+          }
+        );
+        /* Obtener ultimos 5 Eventos del Equipo por ID */
+        this.teamService.getLastEventTeamById(params.id).subscribe(
+          (data) => {
+            // tslint:disable-next-line: no-string-literal
+            this.results = data['results'];
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+        /* Obtener Proximos 5 Eventos del Equipo por ID */
+        this.teamService.getNextEventTeamById(params.id).subscribe(
+          (data) => {
+            // tslint:disable-next-line: no-string-literal
+            this.events = data['events'];
+          },
+          (error) => {
+            console.log(error);
           }
         );
       }

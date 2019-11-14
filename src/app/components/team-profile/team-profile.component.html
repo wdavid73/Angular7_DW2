@@ -13,8 +13,8 @@
       <p class="card-text mt-2 text-justify col-sm-11" style="margin: 0 auto;">{{team.strDescriptionEN}}</p>
       <div class="row">
 
-        <div class="col-2 mt-4" style="height: 100%;"  style="margin: 0 auto;">
-            <img [src]="team.strTeamBadge" class="card-img-top mt-3 img-fluid" alt="Estadio del Equipo">
+        <div class="col-2 mt-4" style="height: 100%;" style="margin: 0 auto;">
+          <img [src]="team.strTeamBadge" class="card-img-top mt-3 img-fluid" alt="Estadio del Equipo">
         </div>
 
         <div class="col-4 mt-4" style="height: 100%;" style="margin: 0 auto;">
@@ -26,24 +26,83 @@
         </div>
 
       </div>
-      <p class="card-text mt-5 text-justify col-sm-11 mb-2" style="margin: 0 auto;">{{team.strStadiumDescription}}</p>
+      <div >
+          <p class="card-text mt-5 text-justify col-sm-11 mb-5" style="margin: 0 auto;">{{team.strStadiumDescription}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row ml-5 mt-5">
+    <div *ngFor='let p of player'>
+      <div class="col mt-2 mb-2">
+        <a [routerLink]="['/player', p.idPlayer  , 'profile']">
+          <img [src]="p.strCutout || p.strThumb" class="card-img-top mt-3 img-fluid" alt="Foto del Jugador"
+            style="border-radius: 50%; width: 11.5rem;">
+        </a>
+      </div>
+    </div>
+  </div>
+<!--
+  <div class="row ml-5 mt-4">
+      <p>Ultimos 5 Eventos</p>
+    <div *ngFor='let last_event of results'>
+      <div class="col mt-2 mb-2">
+        <ul>
+          <li>{{last_event.idEvent}}</li>
+          <li>{{last_event.strEvent || last_event.strEventAlternate}}</li>
+          <li>Score Home : {{last_event.intHomeScore || 0}}</li>
+          <li>Score Away : {{last_event.intAwayScore || 0}}</li>
+        </ul>
+      </div>
     </div>
   </div>
 
   <div class="row ml-5 mt-4">
-    <div *ngFor='let p of player'>
-      <div class="col mt-2 mb-2">
-          <img
-          [src]="p.strCutout || p.strThumb"
-          class="card-img-top mt-3 img-fluid"
-          alt="Foto del Jugador"
-          style="border-radius: 50%; width: 11.5rem;">
-          <a [routerLink]="['/player', p.idPlayer  , 'profile']">
-            <p class="text-center mt-2">{{p.strPlayer}}</p>
-          </a>
-      </div>
+    <p>Proximos 5 Eventos</p>
+      <div *ngFor='let next_event of events'>
+        <div class="col mt-2 mb-2">
+            <ul>
+                <li>{{next_event.idEvent}}</li>
+                <li>{{next_event.strEvent || next_event.strEventAlternate}}</li>
+              </ul>
+        </div>
     </div>
   </div>
+-->
+  <div class="row container">
+      <div class="col-2">
+        <div class="list-group" id="list-tab" role="tablist">
+          <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Last 5 Events</a>
+          <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Next 5 Events</a>
+        </div>
+      </div>
+      <div class="col-10">
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+              <div *ngFor='let last_event of results' style="background: red;">
+                  <div class="col mt-2 mb-2">
+                    <ul>
+                      <li>Event : {{last_event.strEvent || last_event.strEventAlternate}}</li>
+                      <li>Score Home : {{last_event.intHomeScore || 0}}</li>
+                      <li>Score Away : {{last_event.intAwayScore || 0}}</li>
+                    </ul>
+                  </div>
+                </div>
+          </div>
+          <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+              <div *ngFor='let next_event of events'>
+                  <div class="col mt-2 mb-2" style="background: blue;">
+                      <ul>
+                          <li>Event : {{next_event.strEvent || next_event.strEventAlternate}}</li>
+                          <li>Data : {{next_event.strDate || next_event.dateEvent}}</li>
+
+                        </ul>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
 
 
@@ -63,13 +122,13 @@
   Plantel del equipo:
   Listado de todos los jugadores del equipo con su fotografía.
 
-  TODO:
+  TODO: TERMINADO
   perfil de cada jugador donde podrá ver sus datos personales,
   número dorsal, posición en la quejuega, foto.
 
   TODO:
   Eventos:
-    - últimos 5 partidosconsu resultado
+    - últimos 5 partidos con su resultado
     - próximos 5 partidos.
 
     - Listado Con todos los partidos de la temporada actual del equipo
@@ -91,4 +150,3 @@
     Jugadores por ID de equipo : https://www.thesportsdb.com/api/v1/json/1/lookup_all_players.php?id=133604
     Lista todos los equipos de una liga : https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=English%20Premier%20League
 -->
-
