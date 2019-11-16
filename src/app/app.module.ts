@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { PlayerComponent } from './components/player/player.component';
+import { TablePositionComponent } from './components/table-position/table-position.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PlayerComponent } from './components/player/player.component';
     CardComponent,
     TeamProfileComponent,
     HomeComponent,
-    PlayerComponent
+    PlayerComponent,
+    TablePositionComponent
   ],
   imports: [
     BrowserModule,

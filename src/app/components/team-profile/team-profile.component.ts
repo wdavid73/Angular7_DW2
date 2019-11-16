@@ -12,6 +12,7 @@ export class TeamProfileComponent implements OnInit {
   teams: any[] = [];
   events: any[] = [];
   results: any[] = [];
+  table: any[] = [];
 
   constructor(
     private teamService: TeamsService,

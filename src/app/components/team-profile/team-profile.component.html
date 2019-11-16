@@ -1,4 +1,5 @@
 <div class="card mt-2 mb-2 ml-2 mr-2 p2 bg-dark text-white">
+
   <div *ngFor="let team of teams">
     <div class="card-header" style="width: 100%; height: 24%;">
       <div class="row">
@@ -12,29 +13,23 @@
     <div class="card-body">
       <p class="card-text mt-2 text-justify col-sm-11" style="margin: 0 auto;">{{team.strDescriptionEN}}</p>
       <div class="row">
-
         <div class="col-2 mt-4" style="height: 100%;" style="margin: 0 auto;">
           <img [src]="team.strTeamBadge" class="card-img-top mt-3 img-fluid" alt="Escudo del Equipo">
         </div>
-
         <div class="col-4 mt-4" style="height: 100%;" style="margin: 0 auto;">
           <img [src]="team.strStadiumThumb" class="card-img-top mt-3 img-fluid" alt="Estadio del Equipo">
         </div>
-
         <div class="col-2 mt-4" style="max-height: 100% ; max-width: 100%; margin: 0 auto;">
           <img [src]="team.strTeamJersey" class="card-img-top mt-3 img-fluid" alt="Camiseta del Equipo">
         </div>
-
       </div>
       <div>
         <p class="card-text mt-5 text-justify col-sm-11 mb-5" style="margin: 0 auto;">{{team.strStadiumDescription}}</p>
       </div>
     </div>
-
   </div>
 
-
-  <div class="row" style=" margin: 0 auto; max-height: 100%; height: 60%">
+  <div class="row mt-3" style=" margin: 0 auto; max-height: 100%; height: 60%">
       <div class="col"></div>
       <div class="col-6 text-center">
         <div class="list-group list-group-horizontal" id="list-tab" role="tablist">
@@ -53,7 +48,7 @@
               <div *ngFor='let last_event of results'>
                 <div class="col">
                   <div class="card mt-4 mb-2 ml-2 mr-2 p2 bg-light border-info"
-                    style="width: 20rem; padding-top: -10px; padding-bottom: -10px;">
+                    style="width: 100%; padding-top: -10px; padding-bottom: -10px;">
                     <div class="card-body text-dark">
                       <ul class="list-group list-group-flush">
                         <li class="list-group-item bg-light">Event : {{last_event.strHomeTeam}} vs
@@ -75,7 +70,8 @@
             <div class="row">
               <div *ngFor='let next_event of events'>
                 <div class="col">
-                  <div class="card mt-2 mb-2 ml-2 mr-2 p2 bg-light border-info">
+                    <div class="card mt-4 mb-2 ml-2 mr-2 p2 bg-light border-info"
+                    style="width: 100%; padding-top: -10px; padding-bottom: -10px;">
                     <div class="card-body text-dark">
                       <ul class="list-group list-group-flush">
                         <li class="list-group-item bg-light"> Event : {{next_event.strEvent || next_event.strEventAlternate}}</li>
@@ -101,38 +97,21 @@
       </div>
     </div>
   </div>
-  <!--
-  <div class="row ml-5 mt-4">
-      <p>Ultimos 5 Eventos</p>
-    <div *ngFor='let last_event of results'>
-      <div class="col mt-2 mb-2">
-        <ul>
-          <li>{{last_event.idEvent}}</li>
-          <li>{{last_event.strEvent || last_event.strEventAlternate}}</li>
-          <li>Score Home : {{last_event.intHomeScore || 0}}</li>
-          <li>Score Away : {{last_event.intAwayScore || 0}}</li>
-        </ul>
+
+  <div>
+    <p>TODOS LOS PARTIDOS JUGADOS POR EL EQUIPO</p>
+  </div>
+
+  <div>
+      <p>TABLA DE POSICIONES CON NOMBRE DEL EQUIPO EN NEGRITA</p>
+      <div *ngFor="let team of teams">
+        <app-table-position [idTeam] = "team.idTeam"></app-table-position>
       </div>
     </div>
   </div>
 
-  <div class="row ml-5 mt-4">
-    <p>Proximos 5 Eventos</p>
-      <div *ngFor='let next_event of events'>
-        <div class="col mt-2 mb-2">
-            <ul>
-                <li>{{next_event.idEvent}}</li>
-                <li>{{next_event.strEvent || next_event.strEventAlternate}}</li>
-              </ul>
-        </div>
-    </div>
-  </div>
--->
 
-</div>
-
-
-<!--
+    <!--
   TODO: TERMINADO
   Perfil de Equipo
   Escudo,
@@ -153,17 +132,18 @@
   número dorsal, posición en la quejuega, foto.
 
   TODO:
-  Eventos:
+  Eventos: TERMINADO
     - últimos 5 partidos con su resultado
     - próximos 5 partidos.
-
+  :
     - Listado Con todos los partidos de la temporada actual del equipo
     - De los ya jugados se podra ver:
         alineaciones
         resultados
         tarjetas amarrilas
         cambios
-  TODO:
+
+  TODO:TERMINADO 90%
     - Tabla de Posiciones con el nombre del equipo en negrillas
 
 

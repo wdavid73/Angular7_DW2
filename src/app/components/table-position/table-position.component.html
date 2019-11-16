@@ -1,0 +1,35 @@
+<div class="row" style="margin: 0 auto;">
+  <div class="col-10">
+    <table class="table table-sm table-dark">
+      <thead>
+        <th>Team</th>
+        <th>Played</th>
+        <th>Goals for</th>
+        <th>Goals againts</th>
+        <th>Goals difference</th>
+        <th>Win</th>
+        <th>Draw</th>
+        <th>Lost</th>
+        <th>Total</th>
+      </thead>
+      <tbody>
+        <tr *ngFor='let t of table'>
+          <td>{{t.name}}</td>
+          <td>{{t.played }}</td>
+          <td>{{t.goalsfor }}</td>
+          <td>{{t.goalsagainst }}</td>
+          <td>{{t.goalsdifference }}</td>
+          <td>{{t.win }}</td>
+          <td>{{t.draw }}</td>
+          <td>{{t.loss }}</td>
+          <td>{{t.total  }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!--
+<div *ngIf="condition; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>Content to render when condition is true.</ng-template>
+<ng-template #elseBlock>Content to render when condition is false.</ng-template>
+-->
