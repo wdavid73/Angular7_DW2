@@ -5,9 +5,11 @@
         <img [src]="team.strTeamBadge" class="card-img-top mt-3" alt="Escudo Del Equipo">
         <div class="card-body">
           <h5 class="card-title text-center">{{ team.strTeam }}</h5>
-          <a [routerLink]="['/team', team.idTeam  , 'details']" class="btn btn-info btn-block"> Detalles </a>
+          <a [routerLink]="['/team', team.idTeam  , 'details']" class="btn btn-info btn-block"> Details </a>
+          <button class="btn btn-primary btn-block" (click)="saveTeam(team.idTeam)"> Add Fav </button>
         </div>
       </div>
     </div>
   </div>
+
 </div>

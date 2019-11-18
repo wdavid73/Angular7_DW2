@@ -9,13 +9,22 @@ import { TeamsService} from '../../teams.service';
 export class CardComponent implements OnInit {
   title = 'Desarrollo Web 2';
   teams: any[] = [];
-  constructor(protected teamService: TeamsService) { }
+  TeamArray: any[] = [];
+  constructor(protected teamService: TeamsService) {}
+
+  saveTeam(idTeam) {
+    this.teams.forEach(team => {
+      if (team.idTeam === idTeam) {
+        this.TeamArray.push(team);
+        localStorage.setItem( 'teams' , JSON.stringify(this.TeamArray));
+      }
+    });
+  }
 
   ngOnInit() {
     this.teamService.getTeams()
       .subscribe(
         (data) => {
-          console.log(data);
           // tslint:disable-next-line: no-string-literal
           this.teams = data['teams'];
         },

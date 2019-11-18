@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PlayerComponent } from './components/player/player.component';
 import { TablePositionComponent } from './components/table-position/table-position.component';
+import { FavTeamsComponent } from './components/fav-teams/fav-teams.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TablePositionComponent } from './components/table-position/table-positi
     TeamProfileComponent,
     HomeComponent,
     PlayerComponent,
-    TablePositionComponent
+    TablePositionComponent,
+    FavTeamsComponent
   ],
   imports: [
     BrowserModule,

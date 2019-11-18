@@ -14,7 +14,12 @@
       </thead>
       <tbody>
         <tr *ngFor='let t of table'>
-          <td>{{t.name}}</td>
+          <div *ngIf="t.teamid == idTeam;else elseBlock">
+            <td class="bg-primary">{{t.name}}</td>
+          </div>
+          <ng-template #elseBlock>
+            <td>{{t.name}}</td>
+          </ng-template>
           <td>{{t.played }}</td>
           <td>{{t.goalsfor }}</td>
           <td>{{t.goalsagainst }}</td>

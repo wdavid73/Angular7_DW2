@@ -1,0 +1,16 @@
+<div class="row">
+  <div *ngFor='let team of teams'>
+    <div *ngIf="team != ''; else elseBlock ">
+      <div class="col">
+        <div class="card mt-2 mb-2 ml-2 mr-2 p2 bg-dark text-white" style="width: 11.5rem;">
+          <img [src]="team.strTeamBadge" class="card-img-top mt-3" alt="Escudo Del Equipo" [routerLink]="['/team', team.idTeam  , 'details']">
+          <div class="card-body">
+            <h5 class="card-title text-center">{{ team.strTeam }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #elseBlock></ng-template>

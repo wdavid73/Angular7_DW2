@@ -15,7 +15,7 @@
           <a [routerLink]="['/team', p.idTeam ,'details']" class="btn btn-info">Back</a>
         </div>
         <div class="col">
-          <img [src]="p.strThumb" class="card-img-top mt-3 img-fluid" alt="Foto del Jugador">
+          <img [src]="p.strThumb || p.strCutout" class="card-img-top mt-3 img-fluid" alt="Foto del Jugador">
         </div>
       </div>
     </div>
