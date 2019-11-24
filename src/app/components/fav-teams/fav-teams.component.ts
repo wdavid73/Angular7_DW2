@@ -8,9 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class FavTeamsComponent implements OnInit {
   teams = this.getTeamFav();
 
-  constructor() {
 
-   }
+  constructor() {}
 
   getTeamFav() {
     if (JSON.parse( localStorage.getItem('teams')) != null) {

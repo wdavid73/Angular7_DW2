@@ -10,13 +10,21 @@ export class CardComponent implements OnInit {
   title = 'Desarrollo Web 2';
   teams: any[] = [];
   TeamArray: any[] = [];
+
   constructor(protected teamService: TeamsService) {}
 
   saveTeam(idTeam) {
     this.teams.forEach(team => {
       if (team.idTeam === idTeam) {
-        this.TeamArray.push(team);
-        localStorage.setItem( 'teams' , JSON.stringify(this.TeamArray));
+        if ( this.TeamArray.length === 0 ) {
+          this.TeamArray.push(team);
+        } else {
+          this.TeamArray.forEach(item => {
+            if (item !== team) {
+              this.TeamArray.push(team);
+            }
+          });
+        }
       }
     });
   }
@@ -32,6 +40,7 @@ export class CardComponent implements OnInit {
           console.error(error);
         }
       );
+
   }
 
 }
