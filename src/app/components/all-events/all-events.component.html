@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col">
+    <table class="table table-sm table-dark table-responsive table-bordered">
+      <thead>
+        <th>Event</th>
+        <th>Date</th>
+        <th>Round</th>
+        <th>Home Score</th>
+        <th>Goal Details</th>
+        <th>Yellow Cards</th>
+        <th>Red Cards</th>
+        <th>Away Score</th>
+        <th>Goal Details</th>
+        <th>Yellow Cards</th>
+        <th>Red Cards</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ev of eventsbyTeam">
+          <td>{{ev.strEvent}}</td>
+          <td>{{ev.dateEvent}}</td>
+          <td>{{ev.intRound}}</td>
+          <td>{{ev.intHomeScore}}</td>
+          <td>{{ev.strHomeGoalDetails}}</td>
+          <td>{{ev.strHomeRedCards}}</td>
+          <td>{{ev.strHomeYellowCards}}</td>
+          <td>{{ev.intAwayScore}}</td>
+          <td>{{ev.strAwayGoalDetails}}</td>
+          <td>{{ev.strAwayRedCards}}</td>
+          <td>{{ev.strAwayYellowCards}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

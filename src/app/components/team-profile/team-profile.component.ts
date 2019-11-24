@@ -18,6 +18,7 @@ export class TeamProfileComponent implements OnInit {
     private teamService: TeamsService,
     private route: ActivatedRoute
     ) { }
+
   ngOnInit() {
     this.route.params.subscribe(
       (params) => {

@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PlayerComponent } from './components/player/player.component';
 import { TablePositionComponent } from './components/table-position/table-position.component';
 import { FavTeamsComponent } from './components/fav-teams/fav-teams.component';
+import { AllEventsComponent } from './components/all-events/all-events.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FavTeamsComponent } from './components/fav-teams/fav-teams.component';
     HomeComponent,
     PlayerComponent,
     TablePositionComponent,
-    FavTeamsComponent
+    FavTeamsComponent,
+    AllEventsComponent
   ],
   imports: [
     BrowserModule,
