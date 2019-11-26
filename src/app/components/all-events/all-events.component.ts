@@ -16,7 +16,8 @@ export class AllEventsComponent implements OnInit {
   ngOnInit() {
     this.teamService.getEventSeason().subscribe(
       (data) => {
-        this.events = data["events"]
+        // tslint:disable-next-line: no-string-literal
+        this.events = data['events'];
         this.events.forEach(ev => {
           if (ev.idHomeTeam === this.idTeam || ev.idAwayTeam === this.idTeam) {
             this.eventsbyTeam.push(ev);

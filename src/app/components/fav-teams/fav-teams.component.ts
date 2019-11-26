@@ -20,8 +20,6 @@ export class FavTeamsComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('Equipos en LocalStorage');
-    console.log(this.teams);
   }
 
 }

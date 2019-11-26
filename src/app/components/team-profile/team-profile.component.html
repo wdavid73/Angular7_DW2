@@ -77,16 +77,16 @@
                 </div>
               </div>
             </div>
-
+            <br>
             <div *ngFor='let next_event of events'>
               <div class="col">
-                <div class="card mt-4 mb-2 ml-2 mr-2 p2 bg-light border-info"
+                <div class="card mt-4 mb-2 ml-2 mr-2 p2 bg-info border-info"
                   style="width: 100%; padding-top: -10px; padding-bottom: -10px;">
-                  <div class="card-body text-dark">
+                  <div class="card-body text-white">
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item bg-light"> Event :
+                      <li class="list-group-item bg-info"> Event :
                         {{next_event.strEvent || next_event.strEventAlternate}}</li>
-                      <li class="list-group-item bg-light">Data : {{next_event.strDate || next_event.dateEvent}}</li>
+                      <li class="list-group-item bg-info">Data : {{next_event.strDate || next_event.dateEvent}}</li>
                     </ul>
                   </div>
                 </div>
