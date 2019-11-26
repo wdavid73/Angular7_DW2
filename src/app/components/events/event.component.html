@@ -1,0 +1,50 @@
+<div class="container mt-4">
+  <div *ngFor="let ev of events">
+    <div class="jumbotron">
+      <p>{{ev.dateEvent}}</p>
+      <div><img [src]="ev.strThumb" class="img-fluid"></div>
+      <h1 class="display-3 text-center">{{ev.strEvent}}</h1>
+      <p class="display-4 text-center">Home : {{ev.intHomeScore}} - Away : {{ev.intHomeScore}}</p>
+      <hr class="my-4">
+      <div class="row">
+        <div class="col-6" id="yellowCards">
+          <div class="card bg-dark text-white">
+            <div class="card-body">
+                <p>Yellow Card HOME : {{ev.strHomeYellowCards}}</p>
+                <p>Yellow Card AWAY : {{ev.strAwayYellowCards}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6" id="Substitutes">
+          <div class="card bg-dark text-white">
+            <div class="card-body">
+              <p>Substitutes HOME : {{ev.strHomeLineupSubstitutes}}</p>
+              <p>Substitutes AWAY : {{ev.strAwayLineupSubstitutes}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="my-4">
+      <div class="row">
+        <div id="formationhome" class="col-6">
+          <ul class="list-group">
+            <li class="list-group-item text-center list-group-item-primary">Formation Home {{ev.strAwayFormation}}</li>
+            <li class="list-group-item text-center list-group-item-warning">{{ev.strHomeLineupGoalkeeper}}</li>
+            <li class="list-group-item text-center list-group-item-secondary">{{ev.strHomeLineupDefense}}</li>
+            <li class="list-group-item text-center list-group-item-success">{{ev.strHomeLineupMidfield}}</li>
+            <li class="list-group-item text-center list-group-item-danger">{{ev.strHomeLineupForward}}</li>
+          </ul>
+        </div>
+        <div id="formationaway" class="col-6">
+          <ul class="list-group">
+            <li class="list-group-item text-center list-group-item-primary">Formation Away {{ev.strAwayFormation}}</li>
+            <li class="list-group-item text-center list-group-item-warning">{{ev.strAwayLineupGoalkeeper}}</li>
+            <li class="list-group-item text-center list-group-item-secondary">{{ev.strAwayLineupDefense}}</li>
+            <li class="list-group-item text-center list-group-item-success">{{ev.strAwayLineupMidfield}}</li>
+            <li class="list-group-item text-center list-group-item-danger">{{ev.strAwayLineupForward}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

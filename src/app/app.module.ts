@@ -15,6 +15,7 @@ import { PlayerComponent } from './components/player/player.component';
 import { TablePositionComponent } from './components/table-position/table-position.component';
 import { FavTeamsComponent } from './components/fav-teams/fav-teams.component';
 import { AllEventsComponent } from './components/all-events/all-events.component';
+import { EventComponent } from './components/events/event.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AllEventsComponent } from './components/all-events/all-events.component
     PlayerComponent,
     TablePositionComponent,
     FavTeamsComponent,
-    AllEventsComponent
+    AllEventsComponent,
+    EventComponent
   ],
   imports: [
     BrowserModule,
@@ -37,29 +39,3 @@ import { AllEventsComponent } from './components/all-events/all-events.component
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-
-/*
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpClientModule} from '@angular/common/http';
-import { UserService } from './user.service';
-
-import { AppComponent } from './app.component';
-
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule
-  ],
-  providers: [UserService],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-
-
-
-*/

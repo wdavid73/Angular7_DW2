@@ -1,6 +1,31 @@
 <div class="row">
-  <div class="col">
-    <table class="table table-sm table-dark table-responsive table-bordered">
+  <div *ngFor="let ev of eventsbyTeam">
+    <div class="col">
+    <div class="jumbotron bg-info" style="width: 25rem;">
+        <!--<h1 class="display-4">{{ev.strEvent}}</h1>-->
+        <div *ngIf="ev.strThumb != null; else elseBlock">
+            <img [src]="ev.strThumb" class="img-fluid">
+        </div>
+        <ng-template #elseBlock>
+          <h3 class="text-center">{{ev.strEvent}}</h3>
+        </ng-template>
+        <h2 class="lead text-center">{{ev.dateEvent}}</h2>
+        <div *ngIf="date > ev.dateEvent; else blockese">
+          <a [routerLink]="['/event', ev.idEvent  , 'details']" class="btn btn-dark btn-block"> Details </a>
+        </div>
+        <ng-template #blockese></ng-template>
+
+    </div>
+
+</div>
+
+
+</div>
+
+<!---
+  <div class="row">
+    <div class="col">
+      <table class="table table-sm table-dark table-responsive table-bordered">
       <thead>
         <th>Event</th>
         <th>Date</th>
@@ -32,3 +57,4 @@
     </table>
   </div>
 </div>
+-->

@@ -30,7 +30,7 @@
   </div>
 
   <div class="row ml-2 mt-2">
-    <div *ngFor='let p of player'>
+    <div *ngFor='let p of player' style="margin:  0 auto;">
       <div class="col mt-2 mb-2">
         <a [routerLink]="['/player', p.idPlayer  , 'profile']">
           <img [src]="p.strCutout || p.strThumb" class="card-img-top mt-3 img-fluid" alt="Foto del Jugador"
@@ -57,7 +57,7 @@
         <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
           <div class="row">
 
-            <div *ngFor='let last_event of results'>
+            <div *ngFor='let last_event of results' style="margin:  0 auto;">
               <div class="col">
                 <div class="card mt-4 mb-2 ml-2 mr-2 p2 bg-light border-info"
                   style="width: 100%; padding-top: -10px; padding-bottom: -10px;">
@@ -78,7 +78,7 @@
               </div>
             </div>
             <br>
-            <div *ngFor='let next_event of events'>
+            <div *ngFor='let next_event of events' style="margin:  0 auto;">
               <div class="col">
                 <div class="card mt-4 mb-2 ml-2 mr-2 p2 bg-info border-info"
                   style="width: 100%; padding-top: -10px; padding-bottom: -10px;">

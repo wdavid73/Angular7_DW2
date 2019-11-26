@@ -45,6 +45,11 @@ export class TeamsService {
     return this.http.get(urlApi);
   }
 
+  getEventById(id) {
+    const urlApi = 'https://www.thesportsdb.com/api/v1/json/1/lookupevent.php?id=' + id;
+    return this.http.get(urlApi);
+  }
+
   /*
     Eventos de la Temporada https://www.thesportsdb.com/api/v1/json/1/eventsseason.php?id=4328&s=1920
     jugadores por ID de equipo:https://www.thesportsdb.com/api/v1/json/1/lookup_all_players.php?id=133604

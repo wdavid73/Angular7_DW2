@@ -10,6 +10,7 @@ export class AllEventsComponent implements OnInit {
   @Input() idTeam: string;
   events: any[] = [];
   eventsbyTeam: any[] = [];
+  date = this.hoyFecha();
 
   constructor( private teamService: TeamsService ) { }
 
@@ -25,6 +26,14 @@ export class AllEventsComponent implements OnInit {
        });
       }
     );
+    console.log(this.eventsbyTeam);
+  }
+  hoyFecha() {
+    const hoy = new Date();
+    const dd = hoy.getDate();
+    const mm = hoy.getMonth() + 1;
+    const yyyy = hoy.getFullYear();
+    return yyyy + '-' + mm + '-' + dd;
   }
 
 }
