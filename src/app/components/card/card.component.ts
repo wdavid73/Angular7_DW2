@@ -7,7 +7,6 @@ import { TeamsService } from '../../teams.service';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  title = 'Desarrollo Web 2';
   teams: any[] = [];
   TeamArray: any[] = [];
 

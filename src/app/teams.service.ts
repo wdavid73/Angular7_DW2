@@ -36,12 +36,12 @@ export class TeamsService {
     return this.http.get(urlApi);
   }
   getTablePosition() {
-    const urlApi = 'https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=4328&s=1920';
+    const urlApi = 'https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=4328&s=2019-2020';
     return this.http.get(urlApi);
   }
 
   getEventSeason() {
-    const urlApi = 'https://www.thesportsdb.com/api/v1/json/1/eventsseason.php?id=4328&s=1920';
+    const urlApi = 'https://www.thesportsdb.com/api/v1/json/1/eventsseason.php?id=4328&s=2019-2020';
     return this.http.get(urlApi);
   }
 

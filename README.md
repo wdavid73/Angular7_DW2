@@ -1,6 +1,14 @@
-# Dw2
+# Project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+
+## How to Run install
+
+1. verify if you have installed node and npm
+   1. install node if you dont have installed it
+2. install angular-cli with this command `npm install @angular/cli@7.3.9`
+3. go to folder of the project and run `npm install`
+4. run the commmand `ng server`
 
 ## Development server
 
